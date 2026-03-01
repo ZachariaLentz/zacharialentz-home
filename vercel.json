@@ -8,6 +8,10 @@
       "destination": "/login.html"
     },
     {
+      "source": "/candlestickcryptologist",
+      "destination": "https://candlestick-cryptologist.vercel.app/candlestickcryptologist"
+    },
+    {
       "source": "/candlestickcryptologist/:path*",
       "destination": "https://candlestick-cryptologist.vercel.app/:path*"
     }

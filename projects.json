@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Candlestick Cryptologist",
+    "slug": "candlestickcryptologist",
+    "description": "Deterministic trading system API + dashboard.",
+    "path": "/candlestickcryptologist",
+    "repo": "https://github.com/ZachariaLentz/Candlestick_Cryptologist"
+  }
+]

@@ -1,0 +1,43 @@
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+const root = process.cwd();
+const outDir = resolve(root, 'public');
+mkdirSync(outDir, { recursive: true });
+
+const projects = JSON.parse(readFileSync(resolve(root, 'projects.json'), 'utf8'));
+
+const cards = projects
+  .map(
+    (p) => `\n      <article class="card">\n        <h2>${p.name}</h2>\n        <p>${p.description}</p>\n        <p><a href="${p.path}">Open project</a></p>\n        <p class="repo"><a href="${p.repo}" target="_blank" rel="noreferrer">Repository</a></p>\n      </article>`,
+  )
+  .join('\n');
+
+const html = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zacharia Lentz — Projects</title>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; padding: 2rem; background: #0b0f19; color: #e5e7eb; }
+      .wrap { max-width: 880px; margin: 0 auto; }
+      h1 { margin-top: 0; }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+      .card { background: #131a2a; border: 1px solid #24304a; border-radius: 12px; padding: 1rem; }
+      a { color: #93c5fd; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      .repo { opacity: 0.8; font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Projects</h1>
+      <p>zacharialentz.com project index</p>
+      <section class="grid">${cards}
+      </section>
+    </main>
+  </body>
+</html>`;
+
+writeFileSync(resolve(outDir, 'index.html'), html, 'utf8');

@@ -15,6 +15,14 @@ open public/index.html
 3. Set custom domain `zacharialentz.com` on this project.
 4. Keep `Candlestick_Cryptologist` project deployed separately.
 
+## Private sign-in (single-owner)
+Set these Environment Variables in Vercel for this project:
+- `AUTH_USERNAME` (your username)
+- `AUTH_PASSWORD` (your strong password)
+- `AUTH_SESSION_TOKEN` (long random string, 40+ chars)
+
+Middleware enforces auth for all project pages and API paths, except `/login` and auth endpoints.
+
 ## Add a project
 Edit `projects.json`:
 - add card metadata (`name`, `description`, `path`, `repo`)

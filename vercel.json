@@ -4,6 +4,10 @@
   "outputDirectory": "public",
   "rewrites": [
     {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
       "source": "/candlestickcryptologist/:path*",
       "destination": "https://candlestick-cryptologist.vercel.app/:path*"
     }

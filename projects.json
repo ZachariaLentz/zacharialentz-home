@@ -5,5 +5,12 @@
     "description": "Deterministic trading system API + dashboard.",
     "path": "/candlestickcryptologist",
     "repo": "https://github.com/ZachariaLentz/Candlestick_Cryptologist"
+  },
+  {
+    "name": "Workflow Studio",
+    "slug": "workflow-studio",
+    "description": "Design, connect, and run OpenClaw workflows with account-backed nodes and remote bridge support.",
+    "path": "https://studio.zacharialentz.com",
+    "repo": "https://github.com/ZachariaLentz/openclaw-workflow-studio"
   }
 ]
